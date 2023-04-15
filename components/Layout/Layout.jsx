@@ -5,9 +5,9 @@ import Header from "../Header/Header";
 const Layout = ({ children }) => {
   return (
     <>
-      <Flex direction="column" minHeight="100vh" bgGradient="linear(to-r, #1C3946, #467069,#1C3946)">
+      <Flex direction="column" minHeight="100vh">
         <Header />
-        <Flex flexGrow="1" p="2rem" w="100%">
+        <Flex flexGrow="1" p="2rem" w="100%" bgGradient="linear(to-r, #1C3946, #467069, #1C3946)">
           {children}
         </Flex>
         <Footer />

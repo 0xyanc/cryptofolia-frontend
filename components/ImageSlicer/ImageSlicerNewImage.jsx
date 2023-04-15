@@ -1,4 +1,4 @@
-import { Center, Button } from "@chakra-ui/react";
+import { Center, Button, Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Link from "next/link";
 
@@ -34,7 +34,7 @@ function ImageSlicer() {
   }
 
   return (
-    <Center h="300px" w="600px">
+    <Flex justifyItems="center" alignItems="center">
       <div>
         <canvas id="canvas" width="600" height="400"></canvas>
         <br />
@@ -54,7 +54,7 @@ function ImageSlicer() {
           </Link>
         </div>
       </div>
-    </Center>
+    </Flex>
   );
 }
 

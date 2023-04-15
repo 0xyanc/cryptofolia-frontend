@@ -6,14 +6,14 @@ import {
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { goerli, hardhat } from 'wagmi/chains';
+import { arbitrumGoerli } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import Layout from '@/components/Layout/Layout';
 import { ChakraProvider } from '@chakra-ui/react';
 
 const { chains, provider } = configureChains(
-  [goerli],
+  [arbitrumGoerli],
   [
     publicProvider()
   ]
@@ -26,7 +26,7 @@ const { connectors } = getDefaultWallets({
 });
 
 const wagmiClient = createClient({
-  autoConnect: false,
+  autoConnect: true,
   connectors,
   provider
 })

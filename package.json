@@ -15,9 +15,9 @@
     "@rainbow-me/rainbowkit": "^0.12.8",
     "ethers": "^5",
     "framer-motion": "^10.12.2",
-    "next": "13.3.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "^13.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "wagmi": "^0.12.10"
   }
 }

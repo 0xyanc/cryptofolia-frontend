@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import Landing from '@/components/Landing/Landing'
+import Setup from '@/components/Setup/Setup'
 
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Landing />
+      <Setup />
     </>
   )
 }

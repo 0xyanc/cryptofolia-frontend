@@ -16,14 +16,16 @@ const ShowPlant = () => {
     _setBalance(data);
   };
   const sizeMap = new Map();
-  sizeMap.set(0, "ipfs://bafkreigrqloijxeok2rfbk6i7zk346iwin4pvdonthvsiwc4rt35p2blay");
-  sizeMap.set(1, "ipfs://bafkreih5mgxmcma7malpu6pgmmhwygcqz3p7gmeozpu4swuedmanq7vyfa");
-  sizeMap.set(2, "");
-  sizeMap.set(3, "");
-  sizeMap.set(4, "");
-  sizeMap.set(5, "");
-  sizeMap.set(6, "ipfs://bafkreigrqloijxeok2rfbk6i7zk346iwin4pvdonthvsiwc4rt35p2blay");
-  sizeMap.set(7, "ipfs://bafkreigrqloijxeok2rfbk6i7zk346iwin4pvdonthvsiwc4rt35p2blay");
+  sizeMap.set(0, "ipfs://bafkreihe4izxwf6rmu76n7vez6qjrd4mzzhhsev65uwqczap5day4ei7ji");
+  sizeMap.set(1, "ipfs://bafkreigrqloijxeok2rfbk6i7zk346iwin4pvdonthvsiwc4rt35p2blay");
+  sizeMap.set(2, "ipfs://bafkreih5mgxmcma7malpu6pgmmhwygcqz3p7gmeozpu4swuedmanq7vyfa");
+  sizeMap.set(3, "ipfs://bafkreidcgtg3kexeh5ehxcxlh4ofck4m23xirzjiwfk2oktjpypa6u25di");
+  sizeMap.set(4, "ipfs://bafkreibtzqrnupj4lns3spznklf745tqqrwdgmakq7ds3vs7zw6awxtggq");
+  sizeMap.set(5, "ipfs://bafkreifqqiwn6gzrobv43nnpyski6hqoltgbvpcv2hxkp5yanecmsamieu");
+  sizeMap.set(6, "ipfs://bafkreidn3cscj2owwyoxi2ug6fqkzqou4hkc7almb5ijjygqawent6g674");
+  sizeMap.set(7, "ipfs://bafkreib6nmenjye2ks7mtevuoqyf3mk7426akktkb7vy3gkc22klqlor2y");
+  sizeMap.set(8, "ipfs://bafkreibuqf62rkqpodkhqwogt32i7tnlvaqhb2wptlr4ftamrzjyr3edry");
+  sizeMap.set(9, "ipfs://bafkreiazsy27gwmvmuprqt4xxrxlb7yexmkgrhuhcgv3lu6iupijl25wxa");
   const solarToken = process.env.NEXT_PUBLIC_SOLAR_ERC20;
   const inputToken = process.env.NEXT_PUBLIC_USDC_ERC20;
   const chainId = 421613;
@@ -58,8 +60,6 @@ const ShowPlant = () => {
 
   const transferListener = (from, to, value, event, startBlockNumber) => {
     if (event.blockNumber <= startBlockNumber) return;
-    console.log(from, to);
-    console.log(value);
     if (from === address || to === address) {
       getBalance();
     }
@@ -71,8 +71,8 @@ const ShowPlant = () => {
   };
 
   const mint = async () => {
-    const bal = Math.min(7, Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000));
-    const uri = `https://cryptofolia.vercel.app/images/${bal}.png`;
+    const bal = Math.min(9, Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000));
+    const uri = sizeMap.get(bal);
     const mintNFT = await writeSolarERC20Contract.getNFT(balanceRef.current, uri);
     await mintNFT.wait();
   };
@@ -89,11 +89,11 @@ const ShowPlant = () => {
   };
 
   const displayPlant = () => {
-    const bal = Math.min(7, Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000));
+    const bal = Math.min(9, Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000));
     let source = `/images/${bal}.png`;
     return (
       <Link href="/imageslicernewimage">
-        <Image boxSize="400px" objectFit="cover" src={source} alt="Cactus" />
+        <Image boxSize="400px" objectFit="cover" src={source} alt="Plant" />
       </Link>
     );
   };

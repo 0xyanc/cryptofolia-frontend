@@ -15,6 +15,15 @@ const ShowPlant = () => {
     balanceRef.current = data;
     _setBalance(data);
   };
+  const sizeMap = new Map();
+  sizeMap.set(0, "ipfs://bafkreigrqloijxeok2rfbk6i7zk346iwin4pvdonthvsiwc4rt35p2blay");
+  sizeMap.set(1, "ipfs://bafkreih5mgxmcma7malpu6pgmmhwygcqz3p7gmeozpu4swuedmanq7vyfa");
+  sizeMap.set(2, "");
+  sizeMap.set(3, "");
+  sizeMap.set(4, "");
+  sizeMap.set(5, "");
+  sizeMap.set(6, "ipfs://bafkreigrqloijxeok2rfbk6i7zk346iwin4pvdonthvsiwc4rt35p2blay");
+  sizeMap.set(7, "ipfs://bafkreigrqloijxeok2rfbk6i7zk346iwin4pvdonthvsiwc4rt35p2blay");
   const solarToken = process.env.NEXT_PUBLIC_SOLAR_ERC20;
   const inputToken = process.env.NEXT_PUBLIC_USDC_ERC20;
   const chainId = 421613;
@@ -110,6 +119,9 @@ const ShowPlant = () => {
           </Button>
         )}
       </Flex>
+      <Link mt="2rem" href="/imageslicermosaik">
+        <Button colorScheme="green">Gallery</Button>
+      </Link>
     </Flex>
   );
 };

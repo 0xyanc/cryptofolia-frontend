@@ -1,5 +1,5 @@
-import { Center,Button } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { Center, Button } from "@chakra-ui/react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 function ImageSlicer() {
@@ -8,46 +8,53 @@ function ImageSlicer() {
 
   function handleClick() {
     setShowImage(true);
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
     const img = new Image();
-    img.src = '../images/'+ lastImageNumber +'.png';
-    //img.width = 600;
-    //img.height = 400;
+    img.src = "../images/" + lastImageNumber + ".png";
     img.onload = () => {
-      ctx.drawImage(img, 0,0, 600, 400);
+      ctx.drawImage(img, 0, 0, 600, 400);
       setLastImageNumber(0);
     };
   }
 
   function updateImage() {
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
     const img = new Image();
-    img.src = '../images/'+ lastImageNumber +'.png' 
-    //img.width = 600;
-    //img.height = 400;
+    img.src = "../images/" + lastImageNumber + ".png";
     img.onload = () => {
       ctx.drawImage(img, 0, 0, 600, 400);
       if (lastImageNumber < 7) {
         setLastImageNumber(lastImageNumber + 1);
       } else {
-        setLastImageNumber(0);  
+        setLastImageNumber(0);
       }
     };
   }
 
   return (
-    <Center h='300px' w='600px'>
+    <Center h="300px" w="600px">
       <div>
         <canvas id="canvas" width="600" height="400"></canvas>
-        <Button onClick={handleClick} colorScheme="blue">Show image</Button>
-          <div>
-            <br />
-            <Button onClick={updateImage} colorScheme="blue">Change image</Button>
-          </div>
+        <br />
+        <Button onClick={handleClick} colorScheme="green">
+          Show image
+        </Button>
+        <div>
+          <br />
+          <Button onClick={updateImage} colorScheme="green">
+            Change image
+          </Button>
+        </div>
+        <div>
+          <br />
+          <Link href="/showplant">
+            <Button colorScheme="green">Go Back</Button>
+          </Link>
+        </div>
       </div>
-      </Center>
+    </Center>
   );
 }
 

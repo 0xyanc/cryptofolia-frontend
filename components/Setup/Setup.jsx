@@ -7,26 +7,35 @@ const Setup = () => {
   const [username, setUsername] = useState("");
   const [secret, setSecret] = useState("");
   return (
-    <Flex direction="column" justifyContent="center" alignItems="center" ml="30rem" mr="30rem" w="100%">
-      <Heading>Crypto Pots Setup</Heading>
-      <Text mt="1rem">URL</Text>
+    <Flex direction="column" justifyContent="center" alignItems="center" ml="40rem" mr="40rem" w="100%">
+      <Heading color="white">Setup</Heading>
+      <Text color="white" mt="1rem">
+        URL
+      </Text>
       <Input
+        color="white"
         placeholder={"URL"}
         value={url}
         onChange={(e) => {
           setUrl(e.target.value);
         }}
       />
-      <Text mt="1rem">Username</Text>
+      <Text color="white" mt="1rem">
+        Username
+      </Text>
       <Input
+        color="white"
         placeholder={"Username"}
         value={username}
         onChange={(e) => {
           setUsername(e.target.value);
         }}
       />
-      <Text mt="1rem">Secret</Text>
+      <Text color="white" mt="1rem">
+        Secret
+      </Text>
       <Input
+        color="white"
         placeholder={"Secret"}
         value={secret}
         type="password"

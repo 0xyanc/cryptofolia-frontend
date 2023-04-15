@@ -62,7 +62,8 @@ const ShowPlant = () => {
   };
 
   const mint = async () => {
-    // const tokenURI = ;
+    const bal = Math.min(7, Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000));
+    const uri = `https://cryptofolia.vercel.app/images/${bal}.png`;
     const mintNFT = await writeSolarERC20Contract.getNFT(balanceRef.current, uri);
     await mintNFT.wait();
   };
@@ -79,15 +80,17 @@ const ShowPlant = () => {
   };
 
   const displayPlant = () => {
-    const bal = Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000);
-    let source = `/sunflower/${bal}.png`;
+    const bal = Math.min(7, Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000));
+    let source = `/images/${bal}.png`;
     console.log(bal);
     return <Image boxSize="400px" objectFit="cover" src={source} alt="Cactus" />;
   };
 
   return (
     <Flex direction="column" alignItems="center" w="100%">
-      <Text as="b">{ethers.utils.formatEther(balance.toString())} Total KWH</Text>
+      <Text color="white" as="b">
+        {ethers.utils.formatEther(balance.toString())} Total KWH
+      </Text>
       {displayPlant()}
       <Flex mt="1rem">
         <Link href={uniswapLink} isExternal>

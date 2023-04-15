@@ -11,10 +11,6 @@ const Landing = () => {
       <Link href="/setup" isExternal>
         <Button colorScheme="green">Get Started</Button>
       </Link>
-      <br></br>
-      <Link href="/imageslicermosaik">
-        <Button colorScheme="blue">Image Slicer Mosaik</Button>
-      </Link>
     </Flex>
   );
 };

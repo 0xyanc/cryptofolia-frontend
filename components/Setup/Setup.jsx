@@ -7,8 +7,8 @@ const Setup = () => {
   const [username, setUsername] = useState("");
   const [secret, setSecret] = useState("");
   return (
-    <Flex direction="column" justifyContent="center" alignItems="center" ml="40rem" mr="40rem" w="100%">
-      <Heading color="white">Setup</Heading>
+    <Flex direction="column" justifyContent="center" alignItems="center" ml="35rem" mr="35rem" w="100%">
+      <Heading color="white">Setup Data Feed</Heading>
       <Text color="white" mt="1rem">
         URL
       </Text>

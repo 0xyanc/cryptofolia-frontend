@@ -59,7 +59,6 @@ const ShowPlant = () => {
   const getBalance = async () => {
     const userBalance = await readSolarERC20Contract.balanceOf(address);
     setBalance(userBalance);
-    console.log(ethers.utils.formatEther(userBalance));
   };
 
   const mint = async () => {
@@ -79,17 +78,24 @@ const ShowPlant = () => {
     setAllowance(ethers.constants.MaxUint256);
   };
 
+  const displayPlant = () => {
+    const bal = Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000);
+    let source = `/sunflower/${bal}.png`;
+    console.log(bal);
+    return <Image boxSize="400px" objectFit="cover" src={source} alt="Cactus" />;
+  };
+
   return (
     <Flex direction="column" alignItems="center" w="100%">
       <Text as="b">{ethers.utils.formatEther(balance.toString())} Total KWH</Text>
-      <Image boxSize="400px" objectFit="cover" src="https://www.galaxus.ch/im/Files/6/6/1/8/9/3/1/6/blooming-buddies.jpg" alt="Cactus" />
+      {displayPlant()}
       <Flex mt="1rem">
         <Link href={uniswapLink} isExternal>
           <Button colorScheme="green">Trade</Button>
         </Link>
         {allowance === 0 ? (
           <Button ml="1rem" colorScheme="green" onClick={() => approve()}>
-            Approve Folia
+            Approve
           </Button>
         ) : (
           <Button ml="1rem" colorScheme="green" onClick={() => mint()}>

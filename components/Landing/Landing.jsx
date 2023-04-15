@@ -3,11 +3,10 @@ import Link from "next/link";
 
 const Landing = () => {
   return (
-    <Flex direction="column" justifyContent="center" alignItems="center">
+    <Flex direction="column" justifyContent="center" alignItems="center" w="100%">
       <Heading>Crypto Pots</Heading>
       <Text mt="2rem" mb="2rem">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo molestiae deserunt nostrum consequatur quia, consequuntur
-        impedit, cumque deleniti, assumenda totam in. Earum possimus laborum quibusdam aliquid, nostrum quos deleniti accusantium?
+        The greatest threat to our planet is the belief that someone else will save it.
       </Text>
       <Link href="/setup" isExternal>
         <Button colorScheme="green">Get Started</Button>

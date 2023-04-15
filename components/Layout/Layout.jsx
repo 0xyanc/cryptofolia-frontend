@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <>
       <Flex direction="column" minHeight="100vh">
         <Header />
-        <Flex flexGrow="1" p="2rem">
+        <Flex flexGrow="1" p="2rem" w="100%">
           {children}
         </Flex>
         <Footer />

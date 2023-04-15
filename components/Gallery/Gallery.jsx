@@ -2,12 +2,12 @@ import { Button, Flex, Heading, Input, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { useState } from "react";
 
-const Setup = () => {
+const Gallery = () => {
   const [url, setUrl] = useState("");
   const [username, setUsername] = useState("");
   const [secret, setSecret] = useState("");
   return (
-    <Flex direction="column" justifyContent="center" alignItems="center" ml="30rem" mr="30rem" w="100%">
+    <Flex direction="column" alignItems="center">
       <Heading>Crypto Pots Setup</Heading>
       <Text mt="1rem">URL</Text>
       <Input
@@ -43,4 +43,4 @@ const Setup = () => {
   );
 };
 
-export default Setup;
+export default Gallery;

@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import Landing from '@/components/Landing/Landing'
-import Setup from '@/components/Setup/Setup'
 import ShowPlant from '@/components/ShowPlant/ShowPlant'
 
 

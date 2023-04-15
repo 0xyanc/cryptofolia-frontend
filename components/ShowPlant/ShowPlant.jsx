@@ -110,6 +110,9 @@ const ShowPlant = () => {
           </Button>
         )}
       </Flex>
+      <Link mt="2rem" href="/imageslicermosaik">
+        <Button colorScheme="green">Gallery</Button>
+      </Link>
     </Flex>
   );
 };

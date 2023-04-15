@@ -1,4 +1,6 @@
+import { Center,Button } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import Link from "next/link";
 
 function ImageSlicer() {
   const [showImage, setShowImage] = useState(false);
@@ -27,7 +29,7 @@ function ImageSlicer() {
     //img.height = 400;
     img.onload = () => {
       ctx.drawImage(img, 0, 0, 600, 400);
-      if (lastImageNumber < 8) {
+      if (lastImageNumber < 7) {
         setLastImageNumber(lastImageNumber + 1);
       } else {
         setLastImageNumber(0);  
@@ -36,15 +38,16 @@ function ImageSlicer() {
   }
 
   return (
-    <div>
-      <canvas id="canvas" width="600" height="400"></canvas>
-      <button onClick={handleClick}>Show Image</button>
-      {showImage && (
-        <div>
-          <button onClick={updateImage}>Change image</button>
-        </div>
-      )}
-    </div>
+    <Center h='300px' w='600px'>
+      <div>
+        <canvas id="canvas" width="600" height="400"></canvas>
+        <Button onClick={handleClick} colorScheme="blue">Show image</Button>
+          <div>
+            <br />
+            <Button onClick={updateImage} colorScheme="blue">Change image</Button>
+          </div>
+      </div>
+      </Center>
   );
 }
 

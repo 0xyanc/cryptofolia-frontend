@@ -1,3 +1,4 @@
+import { Center, Button } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 function ImageSlicer() {
@@ -25,15 +26,16 @@ function ImageSlicer() {
   }
 
   return (
-    <div>
-      <canvas id="canvas" width="946" height="966"></canvas>
-      <button onClick={handleClick}>Show Image</button>
-      {showImage && (
-        <div>
-          <button onClick={handleSlice}>Add Slice</button>
-        </div>
-      )}
-    </div>
+    //<Center h='300px' w='600px'>
+      <div>
+        <canvas id="canvas" width="946" height="966"></canvas>
+        <Button onClick={handleClick} colorScheme="blue">Show image</Button>
+          <div>
+            <br />
+            <Button onClick={handleSlice} colorScheme="blue">Change image</Button>
+          </div>
+      </div>
+      //</Center>
   );
 }
 

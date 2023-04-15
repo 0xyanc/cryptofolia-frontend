@@ -13,8 +13,12 @@ const Landing = () => {
         <Button colorScheme="green">Get Started</Button>
       </Link>
       <br></br>
-      <Link href="/imageslicer" isExternal>
-        <Button colorScheme="blue">Image Slicer</Button>
+      <Link href="/imageslicermosaik" isExternal>
+        <Button colorScheme="blue">Image Slicer Mosaik</Button>
+      </Link>
+      <br></br>
+      <Link href="/imageslicerbuildup" isExternal>
+        <Button colorScheme="blue">Image Slicer BuildUp</Button>
       </Link>
     </Flex>
   );

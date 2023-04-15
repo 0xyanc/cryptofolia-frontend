@@ -20,6 +20,10 @@ const Landing = () => {
       <Link href="/imageslicerbuildup" isExternal>
         <Button colorScheme="blue">Image Slicer BuildUp</Button>
       </Link>
+      <br></br>
+      <Link href="/imageslicernewimage" isExternal>
+        <Button colorScheme="blue">Image Slicer New Image</Button>
+      </Link>
     </Flex>
   );
 };

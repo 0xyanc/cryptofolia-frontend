@@ -110,11 +110,8 @@ const ShowPlant = () => {
           <Button colorScheme="green">Trade</Button>
         </Link>
         {allowance === 0 ? (
-          // <Button ml="1rem" colorScheme="green" onClick={() => approve()}>
-          //   Approve
-          // </Button>
-          <Button ml="1rem" colorScheme="green" onClick={() => mint()}>
-            Mint NFT
+          <Button ml="1rem" colorScheme="green" onClick={() => approve()}>
+            Approve
           </Button>
         ) : (
           <Button ml="1rem" colorScheme="green" onClick={() => mint()}>

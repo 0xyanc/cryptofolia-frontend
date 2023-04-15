@@ -83,7 +83,11 @@ const ShowPlant = () => {
     const bal = Math.min(7, Math.floor(Number(ethers.utils.formatEther(balanceRef.current.toString())) / 1000));
     let source = `/images/${bal}.png`;
     console.log(bal);
-    return <Image boxSize="400px" objectFit="cover" src={source} alt="Cactus" />;
+    return (
+      <Link href="/imageslicernewimage">
+        <Image boxSize="400px" objectFit="cover" src={source} alt="Cactus" />
+      </Link>
+    );
   };
 
   return (

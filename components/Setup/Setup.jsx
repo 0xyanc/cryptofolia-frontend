@@ -32,7 +32,7 @@ const Setup = () => {
         }}
       />
       <Text color="white" mt="1rem">
-        Secret
+        Password
       </Text>
       <Input
         color="white"

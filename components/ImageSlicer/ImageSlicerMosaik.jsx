@@ -14,7 +14,7 @@ function ImageSlicer() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     const img = new Image();
-    img.src = 'https://www.w3schools.com/w3images/wedding.jpg';
+    img.src = '../images/sunflowermosaic.png';
     img.onload = () => {
       const sliceWidth = img.width / 10;
       const sliceHeight = img.height / 10;
@@ -26,7 +26,7 @@ function ImageSlicer() {
 
   return (
     <div>
-      <canvas id="canvas" width="600" height="400"></canvas>
+      <canvas id="canvas" width="946" height="966"></canvas>
       <button onClick={handleClick}>Show Image</button>
       {showImage && (
         <div>
